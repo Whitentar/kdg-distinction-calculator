@@ -21,7 +21,7 @@ export const ResultsOverview: React.FC<ResultsOverviewProps> = ({
     >
       <div className="px-8 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
         <div className="border-r border-white/10 md:pr-4 last:border-0">
-          <p className="text-white/70 text-sm font-bold uppercase tracking-widest mb-1">Weighted Average</p>
+          <p className="text-white/70 text-sm font-bold uppercase tracking-widest mb-1">Credit Average</p>
           <p className="text-5xl font-black">
             {average.toFixed(2)}
             <span className="text-2xl text-white/50">/20</span>

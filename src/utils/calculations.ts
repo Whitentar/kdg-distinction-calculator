@@ -1,12 +1,12 @@
 import type { Grade, DistinctionLevel } from '../types';
 
-export const calculateWeightedAverage = (grades: Grade[]): number => {
+export const calculateCreditAverage = (grades: Grade[]): number => {
   if (grades.length === 0) return 0;
   
-  const totalWeightedPoints = grades.reduce((acc, g) => acc + (g.grade * g.weight), 0);
-  const totalWeights = grades.reduce((acc, g) => acc + g.weight, 0);
+  const totalCreditPoints = grades.reduce((acc, g) => acc + (g.grade * g.credits), 0);
+  const totalCredits = grades.reduce((acc, g) => acc + g.credits, 0);
   
-  return totalWeights === 0 ? 0 : (totalWeightedPoints / totalWeights);
+  return totalCredits === 0 ? 0 : (totalCreditPoints / totalCredits);
 };
 
 /**

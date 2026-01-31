@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import type { Grade, FileUploadType } from '../types';
 import { parsePastYears, parseThisYear } from '../utils/pdfParser';
-import { calculateWeightedAverage, calculatePercentage, getDistinctionLevel } from '../utils/calculations';
+import { calculateCreditAverage, calculatePercentage, getDistinctionLevel } from '../utils/calculations';
 
 export const useGrades = () => {
   const [pastGrades, setPastGrades] = useState<Grade[]>([]);
@@ -11,7 +11,7 @@ export const useGrades = () => {
 
   const allGrades = useMemo(() => [...pastGrades, ...thisYearGrades], [pastGrades, thisYearGrades]);
   
-  const average = useMemo(() => calculateWeightedAverage(allGrades), [allGrades]);
+  const average = useMemo(() => calculateCreditAverage(allGrades), [allGrades]);
   const percentage = useMemo(() => calculatePercentage(average), [average]);
   const distinction = useMemo(() => getDistinctionLevel(percentage), [percentage]);
   const hasResults = allGrades.length > 0;

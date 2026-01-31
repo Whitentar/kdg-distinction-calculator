@@ -31,7 +31,7 @@ const App: React.FC = () => {
           Calculate your Distinction Level
         </h2>
         <p className="text-gray-600">
-          A weight-based calculation tool for KdG Bachelor degrees, developed by Nichola Bauwelinck.
+          A credit-based calculation tool for KdG Bachelor degrees, developed by Nichola Bauwelinck.
         </p>
       </header>
 

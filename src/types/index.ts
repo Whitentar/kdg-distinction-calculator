@@ -1,7 +1,7 @@
 export interface Grade {
   subject: string;
   grade: number;
-  weight: number;
+  credits: number;
   year: string;
 }
 

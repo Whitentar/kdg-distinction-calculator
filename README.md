@@ -1,11 +1,11 @@
 # KdG Graduation Distinction Calculator
 
-An unofficial, weight-based calculation tool for KdG University of Applied Sciences and Arts Bachelor degrees. This tool helps students calculate their weighted average and projected distinction level by parsing official PDF transcripts.
+An unofficial, credit-based calculation tool for KdG University of Applied Sciences and Arts Bachelor degrees. This tool helps students calculate their weighted average and projected distinction level by parsing official PDF transcripts.
 
 ## 🚀 Features
 
 - **Automated PDF Parsing**: Extract grades directly from official KdG "Studieoverzicht" and "Resultaten" PDF files.
-- **Weighted Calculations**: Automatically handles subject weights (ECTS/credits) to provide an accurate weighted average.
+- **Credit-Based Calculations**: Automatically handles subject credits (ECTS) to provide an accurate weighted average.
 - **Distinction Forecasting**: Determines your distinction level (Voldoende, Onderscheiding, etc.) based on KdG's official grading scales.
 - **Progress Tracking**: Provides a detailed breakdown of all parsed subjects across different academic years.
 - **Privacy First**: All processing is done locally in your browser. Your data never leaves your machine.
