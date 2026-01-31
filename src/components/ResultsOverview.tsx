@@ -28,7 +28,7 @@ export const ResultsOverview: React.FC<ResultsOverviewProps> = ({
         </div>
         <div className="border-r border-white/10 md:pr-4 last:border-0">
           <p className="text-white/70 text-sm font-bold uppercase tracking-widest mb-1">Percentage</p>
-          <p className="text-5xl font-black">{percentage.toFixed(1)}%</p>
+          <p className="text-5xl font-black">{percentage}%</p>
         </div>
         <div className="last:border-0">
           <p className="text-white/70 text-sm font-bold uppercase tracking-widest mb-1">Distinction</p>

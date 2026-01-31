@@ -29,15 +29,17 @@ An unofficial, weight-based calculation tool for KdG University of Applied Scien
 
 ## 📐 Grading Scale
 
-The tool uses the following KdG distinction thresholds:
+The tool uses the official KdG distinction thresholds based on your raw calculated percentage:
 
-| Percentage | Distinction Level |
+| Raw Percentage | Distinction Level |
 | :--- | :--- |
-| < 50% | Failed |
-| 50% - 67.9% | Satisfactory |
-| 68% - 76.9% | Distinction |
-| 77% - 84.9% | Great Distinction |
-| ≥ 85% | Greatest Distinction |
+| < 49.5% | Failed |
+| 49.5% - 64.49% | Satisfactory |
+| 64.5% - 74.49% | Distinction |
+| 74.5% - 84.49% | Great Distinction |
+| ≥ 84.5% | Greatest Distinction |
+
+*Note: As per KdG regulations, the final total is rounded to the nearest integer (>= .5 rounds up).*
 
 ## 📦 Getting Started
 
