@@ -1,5 +1,6 @@
 import React from 'react';
 import type { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { KDG_NAVY } from '../constants/colors';
 
 interface LayoutProps {
@@ -9,6 +10,7 @@ interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      <Analytics />
       <nav className="bg-white border-b border-gray-200 py-4 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <img 
