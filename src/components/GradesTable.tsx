@@ -20,7 +20,7 @@ export const GradesTable: React.FC<GradesTableProps> = ({ grades }) => {
             <tr className="bg-gray-50 text-xs font-bold text-gray-500 uppercase">
               <th className="px-6 py-3">Year</th>
               <th className="px-6 py-3">Subject</th>
-              <th className="px-6 py-3">Weight</th>
+              <th className="px-6 py-3">Credits</th>
               <th className="px-6 py-3">Result</th>
             </tr>
           </thead>
@@ -29,7 +29,7 @@ export const GradesTable: React.FC<GradesTableProps> = ({ grades }) => {
               <tr key={`${grade.subject}-${idx}`} className="hover:bg-gray-50 transition-colors">
                 <td className="px-6 py-4 text-sm text-gray-500">{grade.year}</td>
                 <td className="px-6 py-4 text-sm font-semibold" style={{ color: KDG_NAVY }}>{grade.subject}</td>
-                <td className="px-6 py-4 text-sm text-gray-500">{grade.weight}</td>
+                <td className="px-6 py-4 text-sm text-gray-500">{grade.credits}</td>
                 <td className="px-6 py-4 text-sm font-bold">
                   <span 
                     className={grade.grade < 10 ? 'text-red-600' : ''}

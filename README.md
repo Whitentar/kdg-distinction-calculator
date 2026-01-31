@@ -1,11 +1,11 @@
 # KdG Graduation Distinction Calculator
 
-An unofficial, weight-based calculation tool for KdG University of Applied Sciences and Arts Bachelor degrees. This tool helps students calculate their weighted average and projected distinction level by parsing official PDF transcripts.
+An unofficial, credit-based calculation tool for KdG University of Applied Sciences and Arts Bachelor degrees. This tool helps students calculate their weighted average and projected distinction level by parsing official PDF transcripts.
 
 ## 🚀 Features
 
 - **Automated PDF Parsing**: Extract grades directly from official KdG "Studieoverzicht" and "Resultaten" PDF files.
-- **Weighted Calculations**: Automatically handles subject weights (ECTS/credits) to provide an accurate weighted average.
+- **Credit-Based Calculations**: Automatically handles subject credits (ECTS) to provide an accurate weighted average.
 - **Distinction Forecasting**: Determines your distinction level (Voldoende, Onderscheiding, etc.) based on KdG's official grading scales.
 - **Progress Tracking**: Provides a detailed breakdown of all parsed subjects across different academic years.
 - **Privacy First**: All processing is done locally in your browser. Your data never leaves your machine.
@@ -29,15 +29,17 @@ An unofficial, weight-based calculation tool for KdG University of Applied Scien
 
 ## 📐 Grading Scale
 
-The tool uses the following KdG distinction thresholds:
+The tool uses the official KdG distinction thresholds based on your raw calculated percentage:
 
-| Percentage | Distinction Level |
+| Raw Percentage | Distinction Level |
 | :--- | :--- |
-| < 50% | Failed |
-| 50% - 67.9% | Satisfactory |
-| 68% - 76.9% | Distinction |
-| 77% - 84.9% | Great Distinction |
-| ≥ 85% | Greatest Distinction |
+| < 49.5% | Failed |
+| 49.5% - 64.49% | Satisfactory |
+| 64.5% - 74.49% | Distinction |
+| 74.5% - 84.49% | Great Distinction |
+| ≥ 84.5% | Greatest Distinction |
+
+*Note: As per KdG regulations, the final total is rounded to the nearest integer (>= .5 rounds up).*
 
 ## 📦 Getting Started
 

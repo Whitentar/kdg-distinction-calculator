@@ -43,12 +43,13 @@ export const parsePastYears = async (arrayBuffer: ArrayBuffer): Promise<Grade[]>
     const lines = await getLinesFromPage(page);
     
     for (const lineText of lines) {
-      const match = lineText.match(/(\d{2}-\d{2})\s+\d+\s+[\d,.]+\s+([\d,.]+)\s+(?:B\s+)?(.*?)\s{2,}(NG|[\d,.]+)\s+[A-Z]/);
+      // RegEx matches KdG "Studieoverzicht" table format
+      const match = lineText.match(/(\d{2}-\d{2})\s+\d+\s+([\d,.]+)\s+[\d,.]+\s+(?:B\s+)?(.*?)\s{2,}(NG|[\d,.]+)\s+[A-Z]/);
       
       if (!match) continue;
 
       const year = match[1];
-      const weight = parseFloat(match[2].replace(',', '.'));
+      const credits = parseFloat(match[2].replace(',', '.')); // Group 2 is studiepunten
       const subject = match[3].trim();
       const res1Str = match[4];
       
@@ -58,7 +59,7 @@ export const parsePastYears = async (arrayBuffer: ArrayBuffer): Promise<Grade[]>
       const gradeValue = sanitizeGrade(res2Str || '') ?? sanitizeGrade(res1Str);
 
       if (gradeValue !== null) {
-        grades.push({ year, subject, weight, grade: gradeValue });
+        grades.push({ year, subject, credits, grade: gradeValue });
       }
     }
   }
@@ -75,15 +76,16 @@ export const parseThisYear = async (arrayBuffer: ArrayBuffer): Promise<Grade[]> 
     const lines = await getLinesFromPage(page);
 
     let currentSubject = '';
-    let currentWeight = 0;
+    let currentCredits = 0;
 
     for (let j = 0; j < lines.length; j++) {
       const line = lines[j];
-      const subjectMatch = line.match(/\d+:\s+(.*?)\s+\(studiepunten:\s+\d+\s+-\s+gewicht:\s+(\d+)\)/i);
+      // Match "3: Management 3 (studiepunten: 3 - gewicht: 3)"
+      const subjectMatch = line.match(/\d+:\s+(.*?)\s+\(studiepunten:\s+(\d+)\s+-\s+gewicht:\s+\d+\)/i);
       
       if (subjectMatch) {
         currentSubject = subjectMatch[1].trim();
-        currentWeight = parseInt(subjectMatch[2]);
+        currentCredits = parseInt(subjectMatch[2]); // Capture studiepunten
         continue;
       }
 
@@ -100,7 +102,7 @@ export const parseThisYear = async (arrayBuffer: ArrayBuffer): Promise<Grade[]> 
         grades.push({
           subject: currentSubject,
           grade: gradeValue,
-          weight: currentWeight,
+          credits: currentCredits,
           year: 'Current'
         });
         currentSubject = '';
